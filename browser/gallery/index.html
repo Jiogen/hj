@@ -35,5 +35,36 @@
       </ul>
     </div>
   </article>
+  <script>
+    const currentPhoto = document.querySelector('#currentPhoto');
+    const nextPhoto    = document.querySelector('#nextPhoto');
+    const prevPhoto    = document.querySelector('#prevPhoto');
+    const imgArray = [
+                  'i/breuer-building.jpg',
+                  'i/guggenheim-museum.jpg',
+                  'i/headquarters.jpg',
+                  'i/IAC.jpg',
+                  'i/new-museum.jpg'
+                  ];
+    let step = 0;
+
+    nextPhoto.addEventListener('click', () => {
+      currentPhoto.src = imgArray[step];
+      step++;
+      console.log(step)
+      if(step === imgArray.length) {
+        step = 0;
+      }
+    })
+
+    prevPhoto.addEventListener('click', () => {
+      currentPhoto.src = imgArray[step];
+      step--;
+      console.log(step)
+      if(step < 0) {
+        step = imgArray.length - 1;
+      }
+    })
+  </script>
 </body>
 </html>

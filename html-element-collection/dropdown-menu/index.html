@@ -15,5 +15,16 @@
       <li><a href="#">Выйти</a></li>
     </ul>
   </div>
+  <script>
+    var profileBtn = document.getElementsByClassName('wrapper-dropdown')[0];
+    
+    profileBtn.addEventListener('click', function() {
+      if(profileBtn.classList.contains('active')) {
+        profileBtn.classList.remove('active');
+      } else {
+        profileBtn.classList.add('active');
+      }
+    })
+  </script>
 </body>
 </html>
